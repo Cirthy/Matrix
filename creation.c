@@ -14,6 +14,16 @@ matrix	new_matrix(int row, int column)		// Return a zero-filled matrix
 	return new_matrix;
 }
 
+matrix	error_matrix()						// Return an error matrix
+{
+	matrix	error_matrix;
+
+	error_matrix.row = 0;
+	error_matrix.column = 0;
+	error_matrix.coeff = NULL;
+	return error_matrix;
+}
+
 matrix	id_matrix(int n)					// Return the identity matrix n*n
 {
 	matrix	id;
@@ -36,4 +46,5 @@ void	display_matrix(matrix *m)			// Display a matrix
 	for(int r = 0 ; r < m->row ; r++)
 		for(int c = 0 ; c < m->column ; c++)
 			printf("%f%s", m->coeff[r][c], c == m->column - 1 ? "\n" : "\t");
+	printf("\n\n\n");
 }
